@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Riktronics</title>
+    <link>/tags/</link>
+    <description>Riktronics - a blog for embedded systems</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright ©2021 All rights reserved.</copyright>
+    <lastBuildDate>Sun, 30 May 2021 00:34:24 +0530</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+      <item>
+        <title>at command</title>
+        <link>/tags/at-command/</link>
+        <pubDate>Sun, 30 May 2021 00:34:24 +0530</pubDate>
+        
+        <guid>/tags/at-command/</guid>
+        <description></description>
+      </item>
+    
+      <item>
+        <title>esp-01</title>
+        <link>/tags/esp-01/</link>
+        <pubDate>Sun, 30 May 2021 00:34:24 +0530</pubDate>
+        
+        <guid>/tags/esp-01/</guid>
+        <description></description>
+      </item>
+    
+      <item>
+        <title>esp12</title>
+        <link>/tags/esp12/</link>
+        <pubDate>Sun, 30 May 2021 00:34:24 +0530</pubDate>
+        
+        <guid>/tags/esp12/</guid>
+        <description></description>
+      </item>
+    
+      <item>
+        <title>esp8266</title>
+        <link>/tags/esp8266/</link>
+        <pubDate>Sun, 30 May 2021 00:34:24 +0530</pubDate>
+        
+        <guid>/tags/esp8266/</guid>
+        <description></description>
+      </item>
+    
+      <item>
+        <title>flash</title>
+        <link>/tags/flash/</link>
+        <pubDate>Sun, 30 May 2021 00:34:24 +0530</pubDate>
+        
+        <guid>/tags/flash/</guid>
+        <description></description>
+      </item>
+    
+      <item>
+        <title>arduino</title>
+        <link>/tags/arduino/</link>
+        <pubDate>Sat, 29 May 2021 23:50:02 +0530</pubDate>
+        
+        <guid>/tags/arduino/</guid>
+        <description></description>
+      </item>
+    
+      <item>
+        <title>avr</title>
+        <link>/tags/avr/</link>
+        <pubDate>Sat, 29 May 2021 23:50:02 +0530</pubDate>
+        
+        <guid>/tags/avr/</guid>
+        <description></description>
+      </item>
+    
+      <item>
+        <title>bootloader</title>
+        <link>/tags/bootloader/</link>
+        <pubDate>Sat, 29 May 2021 23:50:02 +0530</pubDate>
+        
+        <guid>/tags/bootloader/</guid>
+        <description></description>
+      </item>
+    
+      <item>
+        <title>isp</title>
+        <link>/tags/isp/</link>
+        <pubDate>Sat, 29 May 2021 23:50:02 +0530</pubDate>
+        
+        <guid>/tags/isp/</guid>
+        <description></description>
+      </item>
+    
+  </channel>
+</rss>

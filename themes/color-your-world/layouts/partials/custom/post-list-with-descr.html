@@ -1,0 +1,57 @@
+<!-- Modified by Avra, based on /partials/post-list.html, to show post description below its titles. Also, changed the style slightly and added "Read more" link. -->
+
+{{ $pag := .Paginate (where .RegularPages "Type" "in" .Site.Params.mainSections) }}
+
+<ul class="posts">
+  {{ range $pag.Pages }}
+  
+    {{ $pageDate := "" }}
+    
+    {{ if not .Date.IsZero }}
+      {{ $pageDate = .Date.Format "2006-01-02" }}
+    {{ end }}
+    
+    <!--    Added by Avra to show the post description    -->
+		<!--    First checks if "description" param exists or not, then checks if its length is gretaer than 0.   -->
+		<!-- 		Also, set the bottom radius of the title in case no description is present 	 -->
+      
+    {{ $description :=  ""}}
+    {{ $bottom_radius := "0px" }}
+    
+    {{ if isset .Params "description" }}
+			{{if gt (len (index .Params "description")) 0}}
+				{{ $description = index .Params "description" }}
+			{{ end }}
+		{{ end }}
+		
+		{{ if eq (len $description) 0 }}
+			{{ $bottom_radius = "5px" }}
+		{{ end }}
+		
+
+    <li>
+			<!--    I (Avra) modified the inline css so the <p> merges with <a> (bottom-margin = 0), also curved the <a> a bit. Removed class="btn"    -->
+      <a style="margin-bottom: 0px; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-left-radius: {{ $bottom_radius }}; border-bottom-right-radius: {{ $bottom_radius }}" href="{{ .RelPermalink }}" title="{{ .LinkTitle }}{{ with $pageDate }}{{ printf " (%s)" . }}{{ end }}">
+        <p>{{ .LinkTitle | emojify }}</p>
+
+        {{ with $pageDate }}
+          <time datetime="{{ . }}">{{ . }}</time>
+        {{ end }}
+      </a>
+      
+      
+      <!--    Added by me to show the post description    -->
+      <!--    Checks if $description length is gretaer than 0.   -->
+      {{ if gt (len $description) 0 }}
+				<p style="border-style: solid; border-top: none; border-width: 1px; 
+					border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; 
+					padding-left: 15px; padding-right: 15px; margin-top: 0px; border-color: var(--accent)">{{ $description }}
+						<span>
+								<a style="all: unset; color: var(--dtl); background-color: var(--accent); border-radius: 5px; margin-left: 5px; padding-left: 5px; padding-right: 5px; cursor: pointer; font-size: 14px; white-space: nowrap" href="{{ .RelPermalink }}" title="{{ .LinkTitle }}{{ with $pageDate }}{{ printf " (%s)" . }}{{ end }}">Read More</a>
+						</span>
+				</p>
+			{{ end }}
+			
+    </li>
+  {{ end }}
+</ul>

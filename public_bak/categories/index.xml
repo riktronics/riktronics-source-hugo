@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Riktronics</title>
+    <link>/categories/</link>
+    <description>Riktronics - a blog for embedded systems</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright ©2021 All rights reserved.</copyright>
+    <lastBuildDate>Sun, 30 May 2021 00:34:24 +0530</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+      <item>
+        <title>ESP8266</title>
+        <link>/categories/esp8266/</link>
+        <pubDate>Sun, 30 May 2021 00:34:24 +0530</pubDate>
+        
+        <guid>/categories/esp8266/</guid>
+        <description></description>
+      </item>
+    
+      <item>
+        <title>Arduino</title>
+        <link>/categories/arduino/</link>
+        <pubDate>Sat, 29 May 2021 23:50:02 +0530</pubDate>
+        
+        <guid>/categories/arduino/</guid>
+        <description></description>
+      </item>
+    
+      <item>
+        <title>AVR</title>
+        <link>/categories/avr/</link>
+        <pubDate>Sat, 29 May 2021 23:50:02 +0530</pubDate>
+        
+        <guid>/categories/avr/</guid>
+        <description></description>
+      </item>
+    
+  </channel>
+</rss>

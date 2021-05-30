@@ -1,0 +1,9 @@
+<section class="category_gridstyle">
+  {{ range .Site.Taxonomies.categories }}
+          <a class="btn" href="{{ .Page.RelPermalink }}" title="{{ .Page.LinkTitle }} ({{ .Count }})">
+			<p>{{ .Page.LinkTitle }}</p>
+			<span>{{ .Count }}</span>
+		</a>
+  {{ end }}          
+</section>
+

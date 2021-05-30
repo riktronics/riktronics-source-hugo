@@ -1,0 +1,23 @@
+<!-- Custom or default site title -->
+{{ if (templates.Exists "partials/custom/site-title.html") }}
+  {{ partial "custom/site-title" . }}
+{{ else }}
+<!-- Edited by Avra -->
+  <!--<a href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Title }}</a>-->
+  <a style="border-radius: 0px; text-decoration: unset; border-style: solid; border-width: 1px; padding-left: 25px; padding-right: 25px;" href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Title }}</a>
+{{ end }}
+
+<!-- Menu -->
+{{ if .Site.Menus.main }}
+  {{ with .Site.Menus.main }}
+    <nav aria-label="{{ T "ariaMainMenu" }}">
+      <ul>
+        {{ range . }}
+          <li>
+            <a class="btn" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+          </li>
+        {{ end }}
+      </ul>
+    </nav>
+  {{ end }}
+{{ end }}

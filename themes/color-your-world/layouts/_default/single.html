@@ -1,0 +1,82 @@
+{{ define "main" }}
+
+  <main>
+    <article>
+      <header>
+        
+        <h1>{{ .Title | emojify }}</h1>
+
+        {{ if or .Params.categories .Params.tags }}
+          <section class="terms">
+            <ul>
+							<p>Categories: </p>
+              {{- range sort (.GetTerms "categories") ".LinkTitle" "asc" -}}
+                <li class="category"><a class="btn" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+              {{- end -}}
+              <p>Tags: </p>
+              {{- range sort (.GetTerms "tags") ".LinkTitle" "asc" -}}
+                <li><a class="btn" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+              {{- end -}}
+            </ul>
+          </section>
+        {{- end -}}
+        
+        {{ if not .Date.IsZero }}
+          <p>
+            {{ if eq .PublishDate .Lastmod }}
+              {{ T "publishedOn" }} <time datetime="{{ .PublishDate.Format "2006-01-02" }}">{{ .PublishDate.Format "2006-01-02" }}</time>
+            {{ else }}
+              {{ T "lastUpdatedOn" }} <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "2006-01-02" }}</time>
+            {{ end }}
+          </p>
+        {{ end }}
+        
+        {{ if .Params.cover }}
+          {{ partial "cover" . }}
+        {{ end }}
+        
+      </header>
+      
+
+      {{ partial "table-of-contents" . }}
+      {{ partial "processed-content" . }}
+			
+    </article>
+    
+    
+    <!-- Added by Avra: Custom parameter to check if the post needs to have comment section or not. Satisfies if value is true, otherwise not -->
+    {{ if .Params.commentSection }}
+    
+		<!--   For graphcomment   -->
+    <div id="graphcomment"></div>
+		<script type="text/javascript">
+
+			/* - - - CONFIGURATION VARIABLES - - - */
+
+			// make sure the id is yours
+			window.gc_params = {
+				graphcomment_id: 'Riktronics',
+
+				// if your website has a fixed header, indicate it's height in pixels
+				fixed_header_height: 0,
+			};
+
+			/* - - - DON'T EDIT BELOW THIS LINE - - - */
+
+			
+			(function() {
+				var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
+				gc.src = 'https://graphcomment.com/js/integration.js?' + Date.now();
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+			})();
+
+		</script>
+			<!-- 	End graphcomment		 -->
+		{{ end }}
+  </main>
+
+{{ end }}
+
+{{ define "svg-extra" }}
+  {{ partialCached "content-svg" . }}
+{{ end }}
