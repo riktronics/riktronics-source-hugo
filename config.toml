@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://riktronics.netlify.app/"
 languageCode = "en"
 title = "Riktronics"
 theme = "color-your-world"
